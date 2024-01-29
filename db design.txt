@@ -1,0 +1,78 @@
+Users Table-
+UserID (Primary Key) -- int
+UserName -- string
+UserEmail -- string
+UserContactDetails -- string
+UserBatchID (Foreign Key referencing Batches table)  -- String
+FeesPaid  -- Bollean
+PlacementEnabled  -- Boolean
+UserPrimaryLanguage -- String
+UserSecondaryLanguage -- String
+IsCourseRestarted -- Boolean
+UserRole -- Array
+
+
+Batch Table-
+BatchID(Primary Key)  -- int
+BatchName -- String
+BatchStartTiming -- Time
+BatchEndTiming --Time
+BatchCourse -- String
+MentorID (Foreign Key referencing Users table) -- int 
+BatchCoordinatorID (Foreign Key referencing Users table) -- int
+StudentCoordinatorID (Foreign Key referencing Users table) -- int
+ClosureDate -- date
+BatchStrength -- int
+
+
+Problems Table -
+Problem ID  (Primary Key) -- int
+ProblemName -- String
+ProblemStatement -- String
+ProblemDifficultyLevel -- String
+ProblemCompletionPoints -- int
+
+
+CodeKata Table -
+CodekataID (Primary Key) -- int
+ProblemID (Foreign Key referencing Problems table) -- int
+UserID (Foreign Key referencing Users table) -- int
+CreatedOn -- timeStamp
+UpdatedOn -- timeStamp
+Progress -- string
+EarnedPoints -- int
+
+
+Topics Table-
+TopicID (Primary Key) -- int
+TopicName -- string
+TopicContent -- string
+TopicPreread -- string
+TopicDate-- timeStamp
+TopicActivity -- String
+TopicTags -- array
+TopicTimelineID -- int
+TopicType (Regular / Additional) -- string
+TopicTaskID -- int
+
+
+Company Drives Table-
+DriveID (Primary Key) -- int
+CompanyName-- string
+CompanyDetails --string
+CompanyWebsite-- string
+SkillsNeeded -- Array
+DriveDate -- Date
+DriveMode -- String
+
+
+Attendence Table-
+AttendanceID (Primary Key) -- int
+BatchID (Foreign Key referencing Batches table) -- int
+UserID (Foreign Key referencing Users table) --int
+IsPresent -- Boolean
+TaskID (Foreign Key referencing Tasks table) -- int
+Date -- date
+
+
+db_model.png
